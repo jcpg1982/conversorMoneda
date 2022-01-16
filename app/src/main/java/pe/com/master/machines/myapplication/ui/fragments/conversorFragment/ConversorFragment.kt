@@ -151,6 +151,7 @@ class ConversorFragment : BaseFragment(), View.OnClickListener, View.OnLongClick
                     setDataMoneySend(mMoneySend)
                     setDataMoneyReceiver(mMoneyReceiver)
                 } else {
+                    mMoneySend = temp
                     setDataMoneySend(mMoneySend)
                 }
             }
@@ -167,6 +168,7 @@ class ConversorFragment : BaseFragment(), View.OnClickListener, View.OnLongClick
                     setDataMoneySend(mMoneySend)
                     setDataMoneyReceiver(mMoneyReceiver)
                 } else {
+                    mMoneyReceiver = temp
                     setDataMoneyReceiver(mMoneyReceiver)
                 }
             }
