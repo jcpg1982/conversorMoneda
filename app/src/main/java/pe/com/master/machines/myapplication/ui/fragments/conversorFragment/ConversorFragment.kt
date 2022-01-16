@@ -21,7 +21,7 @@ import pe.com.master.machines.myapplication.data.viewModel.ViewModelLive
 import pe.com.master.machines.myapplication.databinding.FragmentConversorBinding
 import pe.com.master.machines.myapplication.helpers.Constants
 import pe.com.master.machines.myapplication.interfaces.TextWatcherAdapter
-import pe.com.master.machines.myapplication.ui.activities.activityListMoney.ActivityListMoney
+import pe.com.master.machines.myapplication.ui.activities.listMoneyActivity.ListMoneyActivity
 import pe.com.master.machines.myapplication.ui.fragments.baseFragment.BaseFragment
 import java.text.DecimalFormat
 import javax.inject.Inject
@@ -99,11 +99,11 @@ class ConversorFragment : BaseFragment(), View.OnClickListener, View.OnLongClick
     override fun onLongClick(view: View): Boolean {
         when (view.id) {
             binding.containerMoneySend.id -> {
-                val intent = Intent(requireContext(), ActivityListMoney::class.java)
+                val intent = Intent(requireContext(), ListMoneyActivity::class.java)
                 mResultSend.launch(intent)
             }
             binding.containerMoneyReceiver.id -> {
-                val intent = Intent(requireContext(), ActivityListMoney::class.java)
+                val intent = Intent(requireContext(), ListMoneyActivity::class.java)
                 mResultReceiver.launch(intent)
             }
         }
@@ -142,19 +142,33 @@ class ConversorFragment : BaseFragment(), View.OnClickListener, View.OnLongClick
         mResultSend =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 Log.d(TAG, "initResult mResultSend: ${result.data}")
-                mMoneySend =
+                val temp: Money =
                     result.data?.getParcelableExtra(Constants.Intents.INTENT_EXTRA_MONEY)!!
                 Log.d(TAG, "initResult mMoneySend: ${mMoneySend}")
-                setDataMoneySend(mMoneySend)
+                if (temp.idMoney.equals(mMoneyReceiver.idMoney)) {
+                    mMoneyReceiver = mMoneySend
+                    mMoneySend = temp
+                    setDataMoneySend(mMoneySend)
+                    setDataMoneyReceiver(mMoneyReceiver)
+                } else {
+                    setDataMoneySend(mMoneySend)
+                }
             }
 
         mResultReceiver =
             registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
                 Log.d(TAG, "initResult mResultReceiver: ${result.data}")
-                mMoneyReceiver =
+                val temp: Money =
                     result.data?.getParcelableExtra(Constants.Intents.INTENT_EXTRA_MONEY)!!
                 Log.d(TAG, "initResult mMoneyReceiver: ${mMoneyReceiver}")
-                setDataMoneyReceiver(mMoneyReceiver)
+                if (temp.idMoney.equals(mMoneySend.idMoney)) {
+                    mMoneySend = mMoneyReceiver
+                    mMoneyReceiver = temp
+                    setDataMoneySend(mMoneySend)
+                    setDataMoneyReceiver(mMoneyReceiver)
+                } else {
+                    setDataMoneyReceiver(mMoneyReceiver)
+                }
             }
     }
 

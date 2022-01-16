@@ -69,7 +69,7 @@ class ListMoneyAdapter(val context: Context) :
             pos = position
 
             mBinding.txtCountryMoney.setText(money.country)
-            mBinding.txtConversion.setText("1 PEN = ${obtainSoles(money.buy)}  ${money.codMoney}")
+            mBinding.txtConversion.setText("1 PEN = ${money.buy}  ${money.codMoney}")
 
             Glide.with(context)
                 .load(money.flag)
@@ -82,12 +82,6 @@ class ListMoneyAdapter(val context: Context) :
                     "HolderBody %d (%s) is complete! ${money.flag}", position, money.nameMoney
                 )
             )
-        }
-
-        fun obtainSoles(buy: Double): Double {
-            val multi = 1 * 1
-            val result = multi / buy
-            return format.format(result).toDouble()
         }
 
         init {

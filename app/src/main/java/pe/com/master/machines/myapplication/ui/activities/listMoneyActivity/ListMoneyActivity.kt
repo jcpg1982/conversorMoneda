@@ -1,4 +1,4 @@
-package pe.com.master.machines.myapplication.ui.activities.activityListMoney
+package pe.com.master.machines.myapplication.ui.activities.listMoneyActivity
 
 import android.content.Intent
 import android.os.Bundle
@@ -22,9 +22,9 @@ import pe.com.master.machines.myapplication.ui.activities.baseActivity.BaseActiv
 import pe.com.master.machines.myapplication.ui.adapter.ListMoneyAdapter
 import javax.inject.Inject
 
-class ActivityListMoney : BaseActivity() {
+class ListMoneyActivity : BaseActivity() {
 
-    private val TAG = ActivityListMoney::class.java.simpleName
+    private val TAG = ListMoneyActivity::class.java.simpleName
     private lateinit var binding: ActivityListMonedasBinding
 
     @Inject

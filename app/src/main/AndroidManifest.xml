@@ -32,7 +32,7 @@
 
 
         <activity
-            android:name=".ui.activities.activityListMoney.ActivityListMoney"
+            android:name=".ui.activities.listMoneyActivity.ListMoneyActivity"
             android:theme="@style/Theme.TestBCP.NoActionBar" />
 
     </application>
