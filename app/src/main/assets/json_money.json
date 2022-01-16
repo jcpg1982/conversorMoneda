@@ -1,0 +1,65 @@
+[
+	{
+		"idMoney": 1,
+		"nameMoney":"Euros",
+		"codMoney":"EUR",
+		"country":"European Union",
+		"buy": 0.23,
+		"sell": 0.33,
+		"flag":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbh5_YV-TCXg8AEHhTitVpmSqYxZqv4XPC5glMI2-X_mSc9wfmKzhLF_jBQV2f7X_fSX4&usqp=CAU"
+	},
+	{
+		"idMoney": 2,
+		"nameMoney":"Dolares",
+		"codMoney":"USD",
+		"country":"United States",
+		"buy": 0.26,
+		"sell": 0.36,
+		"flag":"https://www.banderas-mundo.es/data/flags/w580/us.png"
+	},
+	{
+		"idMoney": 3,
+		"nameMoney":"Yenes",
+		"codMoney":"JPY",
+		"country":"Japón",
+		"buy": 29.35,
+		"sell": 29.45,
+		"flag":"https://www.banderas-mundo.es/data/flags/w580/jp.png"
+	},
+	{
+		"idMoney": 4,
+		"nameMoney":"Libra Esterlina",
+		"codMoney":"GBP",
+		"country":"United Kingdom",
+		"buy": 0.19,
+		"sell": 0.29,
+		"flag":"https://www.banderas-mundo.es/data/flags/w580/gb.png"
+	},
+	{
+		"idMoney": 5,
+		"nameMoney":"Franco Suizo",
+		"codMoney":"CHF",
+		"country":"Switzerland",
+		"buy": 0.23,
+		"sell": 0.33,
+		"flag":"https://www.banderas-mundo.es/data/flags/w580/ch.png"
+	},
+	{
+		"idMoney": 6,
+		"nameMoney":"Dolar Canadiense",
+		"codMoney":"CAD",
+		"country":"Canada",
+		"buy": 0.32,
+		"sell": 0.42,
+		"flag":"https://www.banderas-mundo.es/data/flags/w580/ca.png"
+	},
+	{
+		"idMoney": 7,
+		"nameMoney":"Nuevo Sol",
+		"codMoney":"PEN",
+		"country":"Peru",
+		"buy": 1.00,
+		"sell": 1.00,
+		"flag":"https://www.banderas-mundo.es/data/flags/w580/pe.png"
+	}
+]
